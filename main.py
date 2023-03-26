@@ -101,4 +101,3 @@ if __name__ == '__main__':
     print('Воитель, Маг, Лекарь')
     char_class: str = choice_char_class()
     print(start_training(char_name, char_class))
-    print('Test')
