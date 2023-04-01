@@ -15,7 +15,7 @@ class Quest:
     def accept_quest(self):
         if self.end_time is None:
             self.start_time = dt.datetime.now()
-            return (f'Начало {self.name} положено.')
+            return (f'Начало квеста "{self.name}" положено.')
         else:
             return ('С этим испытанием вы уже справились.')
 
@@ -24,18 +24,18 @@ class Quest:
             return ('Нельзя завершить то, что не имеет начала!')
         else:
             self.end_time = dt.datetime.now()
-            return (f'Квест {self.name} окончен.'
+            return (f'Квест "{self.name}" окончен.'
                     f' Время выполнения'
-                    f' квеста: {self.end_time - self.start_time}')
+                    f' квеста {self.end_time - self.start_time}')
 
     def __str__(self):
         if self.end_time is not None:
-            return (f'Цель квеста {self.name} — {self.goal}. Квест завершён.')
+            return (f'Цель квеста {self.name} - {self.goal} Квест завершён.')
         if self.start_time is not None:
-            return (f'Цель квеста {self.name} — {self.goal}.'
+            return (f'Цель квеста {self.name} - {self.goal}.'
                     f' Квест выполняется.')
         else:
-            return (f'Цель квеста {self.name} — {self.goal}.')
+            return (f'Цель квеста {self.name} - {self.goal}.')
 
 # В этих переменных содержатся значения, которые нужно передать
 # в качестве аргументов в экземпляр класса Quest.
